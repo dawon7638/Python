@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+  </head>
+
+  <body>
+    <div class="welcomeBox">
+     
+        <h3>Welcome to <span class="logoName">AutoBuyer.com</span>  {{user.first_name}} {{user.last_name}}!</h3>
+
+        <a href="/My_Dashboard">My DashBoard</a>
+        <a href="/buy">Buy</a>
+        <a href="/sell">Sell</a>
+        <a href="/trade">Trade</a>
+        <a href="/logged_out">Log Out</a>
+      
+    </div>
+    <div class="dashboard">
+      <div class="slogan">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+             <h1> Buy Here!</h1>
+             <img class="money" src="{% static 'img/buying.jpg' %}" alt="money" />
+            </div>
+            <div class="carousel-item">
+              <h1> Sell Here!</h1>
+              <img class="money" src="{% static 'img/sale.jpg' %}" alt="sale" />
+            </div>
+            <div class="carousel-item">
+              <h1> Trade Here!</h1>
+              <img class="money" src="{% static 'img/trading.jpg' %}" alt="trading" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="{% static 'img/luxur_car_upclose.jpg' %}" alt="lux_car" />
+      <div class="consignment">
+        <h2>Ask us about consignments!!</h2>
+        <p>Voted #1 in service by JD Power</p>
+        <p>Voted Best Dealership since 2017</p>
+      </div>
+      <div class="toSell">
+        <p>Pre-owned Vehicle inventory:</p>
+        
+        <table>
+          <tr>
+            <th>Seller</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+          </tr>
+          <tr>
+            <td>Dawon Gregory</td>
+            <td>2019</td>
+            <td>Maserati</td>
+            <td>Grand Tourismo</td>
+            <td><a href="/description">View</a></td>
+          </tr>
+          <tr>
+            <td>Michelle Turner</td>
+            <td>2018</td>
+            <td>Ford</td>
+            <td>Fusion SE</td>
+            <td><a href="/description">View</a></td>
+          </tr>
+          <tr>
+            <td>Jim Doe</td>
+            <td>2019</td>
+            <td>Chevrolet</td>
+            <td>Silverado LTZ</td>
+            <td><a href="/description">View</a></td>
+          </tr>
+          <tr>
+            <td>Joe Dennis</td>
+            <td>2020</td>
+            <td>Lexus</td>
+            <td>F-type</td>
+            <td><a href="/description">View</a></td>
+          </tr>
+          <tr>
+            <td>Jill Scott</td>
+            <td>2019</td>
+            <td>Porsche</td>
+            <td>Carrera S</td>
+            <td><a href="/description">View</a></td>
+          </tr>
+          <tr>
+            <td>Jack Bauer</td>
+            <td>2018</td>
+            <td>Chevrolet</td>
+            <td>Malibu</td>
+            <td><a href="/description">View</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <footer>
+      <p>Contact us: <a href="#">Email</a> | <a href="#">Phone: 1-800-AutoBuy</a> | <a href="#">Customer Support</a></p>
+    </footer>
+  </body>
+</html>

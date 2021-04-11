@@ -1,0 +1,85 @@
+class dojos(models.Model):
+    name = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    state= models.CharField(max_length=2)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class ninjas(models.Model):
+    dojos = models.ForeignKey(dojos, related_name="enrolled", on_delete = models.CASCADE)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    
+    # Dojos:
+    dojos.objects.create(name="Firebase", city="Boise", state="Idaho")
+    dojos.objects.create(name="Earthbase", city="Helena", state="Montana")
+    dojos.objects.create(name="Moonbase", city="Dallas", state="Texas")
+
+    #Delete each dojo:
+    dojos_to_delete = dojos.objects.get(id=1)
+    dojos_to_delete.delete()
+    dojos_to_delete = dojos.objects.get(id=2)
+    dojos_to_delete.delete()
+    dojos_to_delete = dojos.objects.get(id=3)
+    dojos_to_delete.delete()
+    
+    dojos.objects.all()
+
+    #new Dojos:
+    dojos.objects.create(name="Waterbase", city="Tacoma", state="Washington") id3
+    dojos.objects.create(name="Windbase", city="Chicago", state="Illinois") id4
+    dojos.objects.create(name="Sunbase", city="San Jose", state="California") id5
+
+
+    #creating new ninjas: for  dojo(id4)
+    new_ninja=ninjas.objects.create(first_name="Michael", last_name="Choi", edojos=dojos.objects.get(id=4))
+    new_ninja=ninjas.objects.create(first_name="Dawon",last_name="Gregory", edojos=dojos.objects.get(id=4))
+    new_ninja=ninjas.objects.create(first_name="Tom",last_name="Petty", edojos=dojos.objects.get(id=4))
+
+    #creating new ninjas: for  dojo(id5)
+
+    new_ninja=ninjas.objects.create(first_name="Luke",last_name="Skywalker", edojos=dojos.objects.get(id=5))
+    new_ninja=ninjas.objects.create(first_name="Darth",last_name="Vader", edojos=dojos.objects.get(id=5))
+    new_ninja=ninjas.objects.create(first_name="Han",last_name="Solo", edojos=dojos.objects.get(id=5))
+
+
+    #creating new ninjas: for  dojo(id6)
+
+    new_ninja=ninjas.objects.create(first_name="Tauna",last_name="Gregory", edojos=dojos.objects.get(id=6))
+    new_ninja=ninjas.objects.create(first_name="Jill",last_name="Hung", edojos=dojos.objects.get(id=6))
+    new_ninja=ninjas.objects.create(first_name="Albert",last_name="Rocha", edojos=dojos.objects.get(id=6))
+
+
+    #ninjas.objects.all()
+
+    <QuerySet [<ninjas: ninjas object (1)>, <ninjas: ninjas object (2)>, <ninjas: ninjas object (3)>, <ninjas: ninjas object (4)>, <ninjas: ninjas object (5)>, <ninjas: ninjas object (6)>, <ninjas: ninjas object (7)>, <ninjas: ninjas object (8)>, <ninjas: ninjas object (9)>]>
+
+
+    dojos.objects.first().enrolled.all()
+<QuerySet [<ninjas: ninjas object (1)>, <ninjas: ninjas object (2)>, <ninjas: ninjas object (3)>]>
+
+
+ninjas.objects.last().edojos
+<dojos: dojos object (6)>
+
+
+(djangoPy3Env) C:\Users\P1\Desktop\coding_dojo\python\django\django_orm\project7>python manage.py makemigrations
+You are trying to add a non-nullable field 'desc' to dojos without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> "old dojo"
+Migrations for 'dojo_ninja_shell':
+  dojo_ninja_shell\migrations\0002_dojos_desc.py
+    - Add field desc to dojos
+
+
+dojos.objects.create(name="Rainbow", city="Skyview", state="Neptune", desc="Dangerous")
+<dojos: dojos object (7)>

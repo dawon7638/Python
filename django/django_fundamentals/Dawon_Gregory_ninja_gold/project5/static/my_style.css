@@ -1,0 +1,91 @@
+*{ padding: 0px;
+    margin: 0px;
+    /* outline: dotted red; */
+
+}
+
+    .container{
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        display: flex;
+        flex-direction: column;
+        width: 970px;
+        margin: auto;
+        padding: 15px;
+    }   
+
+    .top {
+        display: flex;
+        width: 300px;
+        margin-left: 15px;
+
+    } 
+        .count {
+            border: 3px solid black;
+            margin-left: 15px;
+            width: 165px;
+            font-size: 12px;
+            padding: 3px;
+        }
+
+        .gold {
+            font-size: 12px;
+            margin-top:6px;
+        }
+    
+    .mid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;  
+    }
+
+    .box {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        border: 3px solid black;
+        height: 175px;
+        width: 200px;
+        margin: 15px;
+    }
+
+    .box h3{
+        margin: 10px;    
+    }
+    .box p{
+        margin: 10px;
+        font-size: 15px;  
+    }
+    .box input{
+        margin-top: 25px;
+        width: 80px;
+        font-family: "Comic Sans MS", "Comic Sans", cursive;
+        border: 3px solid black;
+        box-shadow: 3px 3px;
+        
+    }
+   
+    h5 {
+        display: flex;
+        width: 935px;
+        font-size: 10px;
+    }
+
+   .bottom {
+       font-size: 10px;
+       overflow: auto;
+       width: 930px;
+       height: 80px;
+       border: 3px solid black;
+   }
+
+   .restart input {
+    margin-top: 5px;
+    width: 80px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    background-color: red;
+    border: 3px solid black;
+    box-shadow: 3px 3px;
+       
+   }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+       
+    </head>
+    <body>
+        <div class="container">
+            <a href="/shows">Go Back</a>
+
+            <div class="box">
+              
+
+                <form action="/shows_added" method="POST">
+                    {% csrf_token %}
+                    
+                    <div class="nameOfPageBox">
+                        <p>Add a New Show</p>
+                    </div>
+
+                    <div class="titleBox">
+                        <label for="nameOfShow">Title</label>
+                        <input type="text" name="title" id="">
+                    </div>
+
+                    <div class="networkBox">
+                        <label for="network">Network</label>
+                        <input type="text" name="network" id="">
+                        <label for="release_date">Release Date</label>
+                        <input type="date" name="release_date" id="">
+                    </div>
+
+
+                    <div class="textAreaBox">
+                        <label for="desc">Description</label>   
+                        <textarea name="desc" id="" cols="20" rows="2"></textarea>
+                    </div> 
+
+                        <div class="buttonBox">
+                        <button type="submit">Create</button>
+                        </div>
+                    
+
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

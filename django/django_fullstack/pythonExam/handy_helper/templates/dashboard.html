@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% load static %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+        <div class="welcomeBox">
+            <table>
+                <h3>Welcome, {{user.first_name}}!</h3>
+                
+                <a href="/logged_out">Log Out</a><a href="/new_job">New job!</a>
+            </table>
+        </div>
+        <p>Everyones jobs:</p>
+
+            <div class="job_box">
+                <table>
+                    <tr>
+                    <th>Job</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                    </tr>
+                        {%for job in all_jobs%}
+                            <tr>
+                                <td> {{job.title}} </td>
+                                <td> {{job.location}} </td>
+                                {% if user.id == job.user_id %}
+                                    <td><a href="/job_description_page/{{job.id}}">View</a>|
+                                    <a href="removeAJobLink/{{job.id}}">Remove</a>|<a href="edit_job/{{job.id}}">Edit</a></td>
+                                {% else %}
+                                    <td><a href="/job_description_page/{{job.id}}">View</a>
+                                {% endif %}
+                            </tr>
+                        {%endfor%}
+                    </table>
+                </div>
+        
+
+    </body>

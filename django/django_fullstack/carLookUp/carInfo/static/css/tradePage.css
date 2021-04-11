@@ -1,0 +1,110 @@
+*{
+    margin:0px;
+    padding: 0px;
+    /* outline: 1px dotted pink; */
+}
+
+.welcomeBox {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+h3 {
+    width: 500px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+
+.logoName {
+    text-shadow: -7px 3px 2px rgba(191,205,206,0.82);
+    color: #3074D1;
+    background: #FFFFFF;
+    }
+
+.welcomeBox a {
+    
+    text-decoration: none;
+    color: #586B71;
+    margin: 15px 0px 15px 0px;
+}
+
+.welcomeBox h3 {
+    margin-top: 10px;
+}
+.links {
+    display: flex;
+    
+    justify-content: space-evenly;
+    width: 400px;
+}
+
+.trade { 
+    display: flex;
+    justify-content: space-around;
+
+    background: #586B71;
+    background: -moz-linear-gradient(left, #586B71 0%, #CBBACB 50%, #586B71 100%);
+    background: -webkit-linear-gradient(left, #586B71 0%, #CBBACB 50%, #586B71 100%);
+    background: linear-gradient(to right, #586B71 0%, #CBBACB 50%, #586B71 100%);
+   
+    
+    
+}
+
+
+.vehicleInfoForm {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px;
+}
+
+.year {
+    width: 75px;
+}
+.make {
+    width: 200px;
+}
+.model {
+    width: 200px;
+}
+.vin {
+    width: 200px;
+}
+.mileage {
+    width: 75px;
+}
+.infoSubmit {
+    width: 50px;
+}
+
+.submitBtn input {
+    margin-right: 3px;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 2px 2px;
+    background-color:rgb(110, 206, 110);
+}
+.submitBtn a {
+    color: lightblue;
+}
+
+footer {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.beforePic {
+    margin-top: 125px;
+    width: 300px;
+}
+
+.money {
+    width: 330px;
+    height: 275px;
+    border-radius: 10px;
+}

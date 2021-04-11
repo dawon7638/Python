@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% load static %}
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+    crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  
+  <body>
+    <div class="container2">
+      <header>
+        <h1>Welcome, {{user.first_name}}</h1>
+        <p class="topP">
+          {{user.first_name}} {{user.last_name}} <a href="/books">back</a>
+          <a href="/logged_out">Log Out</a>
+        </p>
+      </header>
+      <div class="container3">
+        {% if  user.id == current_liked_book %}
+            <div class="description_of_current_book_box">
+              {% for current_book in users_liked_list.all %}
+                <p>{{current_book.title}}</p>
+                <p>Added by: {{current_book.uploaded_by.first_name}} {{current_book.uploaded_by.last_name}}</p>
+                <p>Added on: {{current_book.created_at}}</p>
+                <p>Last updated on: {{current_book.updated_at}}</p>
+                <p>{{current_book.desc}}</p>
+              {% endfor %}
+              <div class="updateABookForm">
+                
+                <form action="/updateABookForm/{{book_num}}" method="POST">
+                  {% csrf_token %}
+                  <label for="title_of_book">Title</label>
+                  <input type="text" name="title" id="title">
+                  <label for="desc"> Description</label>
+                  <textarea name="desc" id="{{current_title_desc}}" cols="30" rows="3"></textarea>
+                  <div class="update_and_delete_buttons">
+                    <input type="submit" value="Update" /><a class="deleteButton" href="/deleteABookLink/{{book_num}}">Delete</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            <div class="list_of_users_who_like_this_book">
+              <p> Users Who Like This Book</p>
+              {% for current_book in users_liked_list %}
+              <p>{{current_book.uploaded_by.first_name}} {{current_book.uploaded_by.last_name}} </p>
+              {% endfor %}
+              
+              
+            </div>
+            {% else %}
+            <div class="description_of_current_book_box">
+              <div class="current_book_box">
+                {% for current_book in users_liked_list %}
+                <p>{{current_book.title}}</p>
+                <p>Added by: {{current_book.uploaded_by.first_name}} {{current_book.uploaded_by.last_name}}</p>
+                <p>Added on: {{current_book.created_at}}</p>
+                <p>Last updated on: {{current_book.updated_at}}</p>
+                <p>{{current_book.desc}}</p>
+                <div class="list_of_users_who_like_this_book">
+                  <p> Users Who Like This Book</p>
+                  <p>{{current_book.uploaded_by.first_name}} {{current_book.uploaded_by.last_name}}</p>
+
+                  
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {%endif %} 
+            {% if user.id != current_liked_book %}
+            <a href="/addAFavoriteBookLink/{{book_num}}"> add to favorites</a>
+            {% else %}
+            <a href="/unFavoriteABookLink/{{book_num}}"> un-Favorite</a>
+            {% endif %}
+      </div>
+
+      
+  
+    
+    </div>
+  </body>
+</html>

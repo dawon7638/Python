@@ -1,0 +1,46 @@
+*{
+    margin: auto;
+    outline: 1px dotted pink;
+}
+
+
+.container {
+    margin: auto;
+}
+
+.topbox {
+    width: 700px;
+    border: 3px solid black;
+}
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        display: flex;
+        margin: 5px;
+    }
+
+  
+
+
+    .bottombox{
+        border-top: 3px solid black;
+        text-align: center;
+        margin-top: 10px;
+        width: 500px;
+        height: 200px;
+        background-color: red;
+    }
+
+    input {
+        margin-top: 5px;
+        align-items: center;
+    }
+
+    .submitbutton {
+        margin-top: 20px;
+    }
+
+   

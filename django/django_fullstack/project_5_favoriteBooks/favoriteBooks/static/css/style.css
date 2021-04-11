@@ -1,0 +1,113 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dotted pink; */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+}   
+
+    li {
+    color: red;
+    }
+
+
+    .regisration {
+        margin-top: 15px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        background-color:rgb(204, 196, 196);
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .logIn {
+        margin-top: 15px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        background-color:rgb(204, 196, 196);
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    input {
+        box-shadow: 3px 3px;
+    }
+
+    .action {
+        width: 75px;
+        border-radius: 10px;
+        box-shadow: 3px 3px;
+        margin-top: 10px;
+    }
+
+
+.container2 {
+    width: 970px;
+    margin: auto;
+}
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        height: 45px;
+        padding: 10px;
+        border-bottom: 3px solid black;
+    }
+    
+        h1 {
+            font-size: 20px;
+        }
+
+    .topP {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+        font-size: 12px;
+        
+    }
+
+    .addABookFormDiv {
+        margin-top: 15px;
+        height: 300px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+
+        
+    }  
+
+    .allBooksList {
+
+        margin-top: 15px;
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        overflow:scroll;
+        flex-direction: column;
+    }
+
+    .allBooksList h5 {
+        text-decoration: underline;
+    }
+
+
+  

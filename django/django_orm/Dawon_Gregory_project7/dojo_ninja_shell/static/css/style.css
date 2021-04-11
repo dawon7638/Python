@@ -1,0 +1,19 @@
+/* *{
+    margin: 0px;
+    padding: 0px;
+    outline: 1px dotted pink;
+}
+
+
+.container {
+    display: flex;
+    margin: auto;
+
+}
+
+.topbox {
+    background-color: purple;
+    display: flex;
+    flex-direction: column
+    ;
+} */

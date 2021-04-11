@@ -1,0 +1,70 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+.container {
+    margin: auto;
+    width: 970px;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+
+    .morebooks {
+        display:flex;
+        flex-direction: column;
+        height: 300px;
+        width: 400px;
+        margin: 10px;
+        margin-left: 20px;
+    }
+
+        .morebooks h1 {
+            margin-left: 50px;
+        }
+
+        .book_titles{
+            width: 247px;
+            height: 50px;
+            margin: 10px;
+        }
+
+            .names {
+                flex-direction: column;
+                height: 100px;
+            }
+
+
+
+        .desc_div {
+            width: 250px;
+            margin-left: 10px;
+        }
+
+        button {
+            margin: 10px 10px 0px 95px;
+            width: 40px;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+
+        .note_div {
+            background-color: blue;
+            margin-top: 20px;
+        }
+
+    .book_table {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+    }
+
+
+        .book_table p {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 5px 10px 5px 0px
+        }

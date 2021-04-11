@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ninja Gold</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'my_style.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="top">
+                <p class="gold">Your Gold:</p>
+                <p class="count">{{request.session.counter}}</p>
+            </div>
+            <div class="mid">
+                <div class="box">
+                    <h3>Farm</h3>
+                    <p>(earns 10-20 golds)</p>
+                    <form action="/process_money" method="GET">
+                        {%csrf_token%}
+                        <input type="submit" value="Find Gold!">
+                        <input type="hidden" value="farm" name="getgold">
+                    </form>
+                </div>
+            <div class="mid">
+                <div class="box">
+                    <h3>Cave</h3>
+                    <p>(earns 5-10 golds)</p>
+                    <form action="/process_money" method="GET">
+                        {%csrf_token%}
+                        <input type="submit" value="Find Gold!">
+                        <input type="hidden" value="cave" name="getgold">
+                    </form>
+                </div>
+            </div>
+            <div class="mid">
+                <div class="box">
+                    <h3>House</h3>
+                    <p>(earns 2-5 golds)</p>
+                    <form action="/process_money" method="GET">
+                        {%csrf_token%}
+                        <input type="submit" value="Find Gold!" >
+                        <input type="hidden" value="house" name="getgold">
+                    </form>
+                </div>
+            </div>
+            <div class="mid">
+                <div class="box">
+                    <h3>Casino</h3>
+                    <p>(earns/takes 0-50 golds)</p>
+                    <form action="/process_money" method="GET">
+                        {%csrf_token%}
+                        <input type="submit" value="Find Gold!">
+                        <input type="hidden" value="casino" name="getgold">
+                    </form>
+                </div>
+            </div>
+             <h5>Activities:</h5>
+            <div class="bottom">
+               {% for x in request.session.activities%}
+                <p>{{x}}</p>
+                {% endfor %}
+            </div>
+            <div class="restart">
+                <form action="/cookiemonster" method="GET">
+                    {%csrf_token%}
+                    <input type="submit" value="Restart">
+                </form>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/sellPage.css' %}" />
+  </head>
+
+  <body>
+    <div class="welcomeBox">
+      <h3>
+        <a href="/dashboard"><span class="logoName"> AutoBuyer.com</span> </a>
+      </h3>
+      <div class="links">
+        <a href="/My_Dashboard">My DashBoard</a>
+        <a href="/inventory">Inventory</a>
+        <a href="/buy">Buy</a>
+        <a href="/trade">Trade</a>
+        <a href="/logged_out">Log Out</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sell">
+        <div class="vehicleInfoForm">
+          <p>Selling a vehicle?</p>
+          <p>Enter your vehicle information below.</p>
+          <table>
+            <form action="sellACarForm" method="POST">
+              <label class="year" for="year">Year:</label>
+              <input class="year" type="number" name="year" id="year" />
+              <label class="make" for="make">Make:</label>
+              <input class="make" type="text" name="make" id="make" />
+              <label class="model" for="model">Model:</label>
+              <input class="model" type="text" name="model" id="model" />
+              <label class="vin" for="vin">Vin:</label>
+              <input class="vin" type="text" name="vin" id="vin" />
+              <label class="mileage" for="mileage">Mileage:</label>
+              <input class="mileage" type="text" name="mileage" id="mileage" />
+              <label for="notes">Notes:</label>
+              <textarea name="note" id="note" cols="30" rows="5">
+Condition of vehicle:</textarea
+              >
+              <br />
+              <div class="submitBtn">
+                <input class="infoSubmit" type="submit" value="Sell" />
+                <a href="#">Cancel</a>
+              </div>
+            </form>
+          </table>
+        </div>
+      </div>
+      <div class="sellAd">
+        <h4>
+          Option 1: Sell your vehicle on your own and hope to make a good sale.
+        </h4>
+        <img
+          class="sellImg"
+          src="{% static 'img/piggyBank.jpg' %}"
+          alt="piggy"
+        />
+        <br />
+        <br />
+        <br />
+        <h4>
+          Option 2: Have us deal with the hassels of selling your vehicle!
+        </h4>
+        <img
+          class="sellImg"
+          src="{% static 'img/moneyCase.jpg' %}"
+          alt="moneyCase"
+        />
+      </div>
+    </div>
+    <footer>
+      <p>
+        Contact us: <a href="#">Email</a> |
+        <a href="#">Phone: 1-800-AutoBuy</a> |
+        <a href="#">Customer Support</a>
+      </p>
+    </footer>
+  </body>
+</html>

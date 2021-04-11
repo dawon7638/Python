@@ -1,0 +1,152 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dotted pink; */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+}   
+
+    li {
+    color: red;
+    }
+
+
+    .regisration {
+        margin-top: 15px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        background-color:rgb(204, 196, 196);
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .logIn {
+        margin-top: 15px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        background-color:rgb(204, 196, 196);
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    input {
+        box-shadow: 3px 3px;
+    }
+
+    .action {
+        width: 75px;
+        border-radius: 10px;
+        box-shadow: 3px 3px;
+        margin-top: 10px;
+    }
+
+
+.container2 {
+    width: 970px;
+    margin: auto;
+}
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        height: 45px;
+        padding: 10px;
+        border-bottom: 3px solid black;
+    }
+    
+        h1 {
+            font-size: 20px;
+        }
+
+    .topP {
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+        font-size: 12px;
+        
+    }
+
+     h3 {
+
+        font-size: 15px;
+        margin: 20px 0px 0px 110px;
+    }
+
+    .posting-box {
+        display: flex;
+        justify-content: center;
+        margin-top: 3px;
+        height: 150px;
+
+    }
+    .message-box {
+        background-color: blue;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        margin-top: 3px;
+        height: 75px;
+        width: 700px;
+        overflow: auto;
+
+    }
+
+    .created {
+        display: flex;
+        background-color: pink;
+        width: 300px;
+        height: 25px;
+    }
+
+        textarea {
+            border: 2px solid black;
+        }
+        
+        .input-box {
+            display: flex;
+            justify-content: flex-end;
+        }
+                .input-box input {
+                    font-size: 10px;
+                    padding: 3px;
+                    text-align: center;
+                    background-color:#2d79e4;
+                    border-radius: 3px;
+                    box-shadow: 2px 2px;
+
+            }
+
+            h5 {
+                font-size: 12px;
+                margin: 20px 0px 0px 110px;
+            }
+
+            .input-box2 {
+                display: flex;
+                justify-content: flex-end;
+            }
+                    .input-box2 input {
+                        font-size: 10px;
+                        padding: 3px;
+                        text-align: center;
+                        background-color:lightgreen;
+                        border-radius: 3px;
+                        box-shadow: 2px 2px;
+    
+                }
+    
+    

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+       
+    </head>
+    <body>
+        <div class="container">
+            <div class="morebooks">
+                <h1>Add a Book</h1>
+                <form action="/addBook" method="POST">
+                    {%csrf_token%}
+                    
+
+                    <div class="book_titles">
+                        <label for="">Title</label>
+                        <input type="text" name="title" id="">
+                    </div>
+
+                    <div class="desc_div">
+                        <label for="">Description</label>
+                        <textarea name="desc" id="" cols="20" rows=""></textarea>
+                    </div>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+                <div class="book_table">
+                    {% for book in all_books%}
+                        <p> 
+                            {{book.id}} 
+                            {{book.title}}
+                            <a href="/books/{{book.id}}">view</a>
+                    {%endfor%}
+                </div>
+        </div>
+    </body>
+</html>

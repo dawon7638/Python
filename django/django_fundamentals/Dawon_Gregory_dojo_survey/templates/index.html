@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'my_style.css' %}">
+</head>
+<body>
+    <div class="container1">
+
+        <form action="/process_form" method="POST">
+            {%csrf_token%}
+            <div class="topbox">
+                <label for="name">Your Name</label>
+                <input type="text" name="user_name"> 
+                
+                <label for="location">Dojo Location:</label>
+                <select class="selection" name="location" id="location">
+                <option value="Arlington">Arlington,VA</option>
+                <option value="Bellevue">Bellevue,WA</option>
+                <option value="Boise">Boise,ID</option>
+                <option value="Chicago">Chicago,IL</option>
+                <option value="Dallas">Dallas,TX</option>
+                <option value="Los Angeles">Los Angeles,CA</option>
+                <option value="Oakland">Oakland,CA</option>
+                <option value="Orange county">Orange County,CA</option>
+                <option value="Silicon Valley">Silicon Valley,CA</option>
+                <option value="Tulsa">Tulsa,OK</option>
+                </select>
+               
+                <label for="favorite language">Favorite Language</label>
+                <select name="language" id="language">
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Java">Java</option>
+                    <option value=".Net/C#">.NET/C#</option>
+                    <option value="Ruby on Rails">Ruby on Rails</option>
+                    <option value="React">React</option>
+                    <option value="Swift">Swift</option>
+                    <option value="Kotlin">Kotlin</option>
+                </select>
+               
+            </div>
+            <div class="lowerbox">
+                <label for="comment">Comment (optional)</label>
+                <textarea name="comment" id="comment" cols="50" rows="5"></textarea>
+                <input type="submit" value="submit">
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

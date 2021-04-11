@@ -1,0 +1,55 @@
+firstBook.objects.create(title="C Sharp")
+secondBook.objects.create(title="Java")
+thirdBook.objects.create(title="Python")
+fourthBook.objects.create(title="PHP")
+fifthBook.objects.create(title="Ruby")
+
+
+firstAuthor=Author.objects.create(first_name="Jane", last_name="Austen")
+secondAuthor=Author.objects.create(first_name="Emily", last_name="Dickinson")
+thirdAuthor=Author.objects.create(first_name="Fyodor", last_name="Dostoevsky")
+fourthAuthor=Author.objects.create(first_name="William", last_name="Shakespeare")
+fifthAuthor=Author.objects.create(first_name="Lau", last_name="Tzu")
+
+firstbook =Book.objects.get(id=1)
+>>> firstbook
+<Book: Book object (1)>
+>>> firstbook.title="C#"
+>>> firstbook.save()
+
+fourthAuthor=Author.objects.get(id=4)
+>>> fourthAuthor
+<Author: Author object (4)>
+>>> fourth_author.first_name="Bill"
+>>> fourth_author.save()
+
+
+
+ firstAuthor.books.add(firstBook)
+>>> firstAuthor.books.add(secondBook)
+>>> secondAuthor.books.add(firstBook)
+>>> secondAuthor.books.add(secondBook)
+>>> secondAuthor.books.add(thirdBook)
+>>> thirdAuthor.books.add(firstBook)
+>>> thirdAuthor.books.add(secondBook)
+>>> thirdAuthor.books.add(thirdBook)
+>>> thirdAuthor.books.add(fourthBook)
+>>> fourthAuthor.books.add(firstBook)
+>>> fourthAuthor.books.add(secondBook)
+>>> fourthAuthor.books.add(thirdBook)
+>>> fourthAuthor.books.add(fourthBook)
+>>> fourthAuthor.books.add(fifthBook)
+
+thirdBook.authors.all()
+<QuerySet [<Author: Author object (2)>, <Author: Author object (3)>, <Author: Author object (4)>]>
+
+ firstAuthor.books.remove(thirdBook)
+
+ fifthAuthor.books.add(secondbook)
+
+<QuerySet [<Book: Book object (1)>, <Book: Book object (2)>, <Book: Book object (3)>, <Book: Book object (4)>]>
+
+<QuerySet [<Author: Author object (4)>]>
+
+
+

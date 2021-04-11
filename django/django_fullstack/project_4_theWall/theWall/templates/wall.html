@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% load static %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+        <div class="container2">
+            <header>
+                <h1>CodingDojo Wall</h1>
+                <p class="topP">Welcome {{user.first_name}}<a href="/logged_out">Log Off</a></p>
+            </header>
+
+
+
+            <h3>Post a message</h3>
+            <div class="posting-box">
+
+                <form action="/add_message" method="POST">
+                    {% csrf_token %}
+                    <textarea name="users_messages" id="" cols="100" rows="3"></textarea>
+                    <br>
+                    <div class="input-box"><input type="submit" value="Post a message"></div>
+                </form>
+            </div>
+
+            <div class="messages_container"></div>
+            <p>name and date</p>
+            {% for messages in msg %}
+                <label for="posted_message">{{msg.user_id.first_name}} - {{msg.created_at}}</label>
+                <p class="posted_message">{{msg.message}}</p>
+                {% for comment in messages.message %}
+                    <p>{{comment.user_id.first_name}}</p>
+                    <p>{{comment.users_comments}}</p>
+                {% endfor %}
+                <h5>Post a comment</h5>
+                <div class="posting-box">
+                    <form action="/add_comment" method="POST">
+                        {% csrf_token %}
+                        <textarea name="users_comments" s id="" cols="100" rows="2"></textarea>
+                        <br>
+                        <div class="input-box2"><input class="comment-button" type="submit" value="Post a comment">
+                        </div>
+                    </form>
+
+                </div>
+            {% endfor%}
+        </div>
+    </body>
+</html>

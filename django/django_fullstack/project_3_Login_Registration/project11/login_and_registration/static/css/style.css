@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px dotted pink; */
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+}   
+
+    li {
+    color: red;
+    }
+
+
+    .regisration {
+        margin-top: 15px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        background-color:rgb(204, 196, 196);
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .logIn {
+        margin-top: 15px;
+        width: 300px;
+        padding: 10px;
+        box-shadow: 3px 3px;
+        border: 1px solid black;
+        background-color:rgb(204, 196, 196);
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+    input {
+        box-shadow: 3px 3px;
+    }
+
+    .action {
+        width: 75px;
+        border-radius: 10px;
+        box-shadow: 3px 3px;
+        margin-top: 10px;
+    }
+
+.welcomeBox {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: 10px;
+}
+
+    p {
+        color: green;
+    }

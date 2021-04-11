@@ -1,0 +1,25 @@
+.container1 {
+    display: flex;
+    width: 670px;
+    margin: auto;
+    height: auto;
+    border: 2px solid black;
+}
+
+form {
+    margin: 5px;
+    width:300px;
+    padding: 20px;
+}
+
+.topbox {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+   
+}
+
+
+
+
+

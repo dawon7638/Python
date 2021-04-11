@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="regisration">
+        <h1>Registration</h1>
+
+        {% if messages %}
+        <ul class="messages">
+              {% for message in messages %}         
+          {%if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}  <li>{{message}}</li>  {% endif %}
+              {% endfor %}
+        </ul>
+        {% endif %}
+
+        <table>
+          <form action="/register" method="POST">
+            {%csrf_token%}
+
+            <label for="firstname">First Name:</label>
+            <input type="text" name="first_name" id="" />
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="last_name" id="" />
+
+            <label for="email">Email:</label>
+            <input type="email" name="email_address" id="" />
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="" />
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" name="confirmPassword" id="" />
+
+            <input class="action" type="submit" value="Register" />
+          </form>
+        </table>
+      </div>
+
+      <div class="logIn">
+        <h2>Login</h2>
+        {% if messages %}
+        <ul class="messages">
+              {% for message in messages %}         
+          {%if message.level == DEFAULT_MESSAGE_LEVELS.WARNING%}  <li>{{message}}</li>  {% endif %}
+              {% endfor %}
+        </ul>
+        {% endif %}
+
+        <table>
+          <form action="/logIn" method="POST">
+            {%csrf_token%}
+
+            <label for="email">Email:</label>
+            <input type="email" name="email_address" id="" />
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="" />
+
+            <input class="action" type="submit" value="Login" />
+          </form>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

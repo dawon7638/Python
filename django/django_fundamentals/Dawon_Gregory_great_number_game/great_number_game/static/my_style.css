@@ -1,0 +1,91 @@
+*{
+    margin: 0px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    margin: auto;
+    padding: 30px;
+    align-items: center;
+    width: 500px;
+    height: 400px;
+}
+
+
+    .topbox {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+    }
+
+    .bottomboxwin {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    p {
+        margin: 5px;
+    }
+
+     .one {
+         font-size: 25px;
+     }
+
+    input {
+        display: flex;
+        text-align: center;
+        margin: 5px;
+        width: 75px;
+        padding: 3px;
+        border: 1px solid black;
+        
+    }
+
+     
+
+    
+
+    .win {
+        text-align: center;
+        height: 80px;
+        width: 200px;
+        padding: 10px;
+        color: white;
+        background-color: darkgreen;
+        border: 3px solid black;
+    }
+    .toohigh {
+        text-align: center;
+        height: 200px;
+        width: 200px;
+        padding: 10px;
+        color: white;
+        background-color: red;
+        border: 3px solid black;
+    }
+    .toolow {
+        text-align: center;
+        height: 200px;
+        width: 200px;
+        padding: 10px;
+        color: white;
+        background-color: red;
+        border: 3px solid black;
+    }
+    .seriously {
+        text-align: center;
+        height: 150px;
+        width: 200px;
+        padding: 10px;
+        color: white;
+        background-color: darkslategray;
+        border: 3px solid black;
+    }
+
+

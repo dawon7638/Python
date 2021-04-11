@@ -1,0 +1,50 @@
+*{
+    margin: 0px auto;
+    padding: 0px;
+    outline: 1px dotted pink;
+    
+}
+
+.container {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    width: 970px;
+    
+
+}
+
+    a {
+        /* margin-left: 900px; */
+    }
+
+    .box {
+        display: flex;
+
+    }
+
+        .nameOfPageBox {
+            font-size: 25px;
+            height: 75px;
+            width: 400px;
+        }   
+        .titleBox {
+            height: 75px;
+            width: 400px
+        }
+        .networkBox {
+            display: flex;
+            height: 75px;
+            width: 500px
+        } 
+        .textAreaBox {
+            display: flex;
+            height: 75px;
+            width: 400px
+        }
+        .buttonBox {
+            display: flex;
+            align-items: center;
+            height: 75px;
+            width: 400px
+        }

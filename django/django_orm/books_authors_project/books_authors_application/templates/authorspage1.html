@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+       
+    </head>
+    <body>
+        <div class="container">
+            <div class="morebooks">
+                <h1>Add an Author</h1>
+                <form action="/addAuthor" method="POST">
+                    {%csrf_token%}
+                    
+
+                    <div class="book_titles">
+
+                        <div class="names">
+                            <label for="">First Name</label>
+                            <input type="text" name="first_name" id="">
+                            <label for="">Last Name</label>
+                            <input type="text" name="last_name" id="">
+                        </div>
+
+
+                    </div>
+
+                    <div class="note_div">
+                        <label for="">Notes</label>
+                        <textarea name="note" id="" cols="20" rows="4"></textarea>
+                    </div>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+                <div class="book_table">
+                    {% for authors in all_authors%}
+                        <p> 
+                            {{authors.id}} 
+                            {{authors.first_name}}
+                            {{authors.last_name}}
+                            <a href="author/{{authors.id}}">view</a>
+                    {%endfor%}
+                </div>
+        </div>
+    </body>
+</html>

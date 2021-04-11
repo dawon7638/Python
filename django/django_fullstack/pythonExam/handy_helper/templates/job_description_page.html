@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% load static %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <body>
+        <div class="welcomeBox">
+            <table>
+                <h3>Hello {{user.first_name}}! These are the job details!</h3>
+                <a href="/dashboard">Dashboard</a><a href="/logged_out">Log Out</a>
+            </table>
+        </div>
+
+            <div class="jobdescriptionbox">
+                {% for current_job in all_jobs %}
+                <P class="lead">{{current_job.title}}</P>
+                <div class="smalldescbox">
+                <P>Location: {{current_job.location}}</P>
+                <p>Description: {{current_job.description}}</p>
+                <p>Posted by: {{current_job.user.first_name}}</p>
+                <p>Posted on: {{current_job.created_at}}</p></div>
+                {% endfor %}
+
+
+
+            </div>
+       

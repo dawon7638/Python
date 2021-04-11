@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+       
+    </head>
+    <body>
+    
+            <div class="welcomeBox">
+                <table>
+                    <h3>Hello {{user.first_name}}! Let's create a job!</h3>
+                    <a href="/dashboard">Dashboard</a><a href="/logged_out">Log Out</a>
+                </table>
+            </div>
+
+            <div class="job_box">
+                {% if messages %}
+                <ul class="messages">
+                      {% for message in messages %}         
+                  {%if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}  <li>{{message}}</li>  {% endif %}
+                      {% endfor %}
+                </ul>
+                {% endif %}
+              
+                <div class="formbox">
+                    <form action="/new_job_form" method="POST">
+                        {% csrf_token %}
+                        <div class="titleBox">
+                            <label for="nameOfJob">Title</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div class="textAreaBox">
+                            <label for="description">description</label>   
+                            <textarea name="description" id="description" cols="20" rows="2"></textarea>
+                        </div> 
+                        <div class="locationBox">
+                            <label for="locationOfJob">Location</label>
+                            <input type="text" name="location" id="location">
+                        </div>
+                            <div class="buttonBox">
+                            <button type="submit">Submit</button>
+                            </div>
+                            <a href="/dashboard">Cancel</a>
+                        
+
+                        </form>
+                </div>
+            </div>
+        
+    </body>
+</html>

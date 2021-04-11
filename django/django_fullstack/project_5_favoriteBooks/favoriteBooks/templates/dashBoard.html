@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <div class="container2">
+      <header>
+        <h1>Welcome {{user.first_name}}</h1>
+        <p class="topP"><a href="/logged_out">Log Out</a></p>
+      </header>
+    </div>
+
+    <div class="container">
+      <div class="addABookFormDiv">
+        
+        <table>
+          <p>Add a Favorite Book</p>
+          {% if messages %}
+        <ul class="messages">
+              {% for message in messages %}         
+          {%if message.level == DEFAULT_MESSAGE_LEVELS.ERROR%}  <li>{{message}}</li>  {% endif %}
+              {% endfor %}
+        </ul>
+        {% endif %}
+          <form action="/addABookForm" method="POST">
+            {% csrf_token %}
+            <label for="title_of_Book">Title</label>
+            <input type="text" name="title" id="{{current_title_id}}" />
+            <label for="desc"> Description</label>
+            <textarea name="desc" id="{{current_title_desc}}" cols="30" rows="3"></textarea>
+            <input type="submit" value="Add" />
+          </form>
+        </table>
+      </div>
+
+      <div class="allBooksList">
+        <h5>All Books</h5>
+        {% for current_user_book in all_books_on_list %}    
+          {% if user.id == current_user_book.uploaded_by.id %}
+            <p><a href="/books/{{current_user_book.id}}">{{current_user_book.title}}</a></p>
+            <p>(added by:{{current_user_book.uploaded_by.first_name}} {{current_user_book.uploaded_by.last_name}})</p>
+            <p>this is one of your favorites</p>
+          {% else %}
+            <p><a href="/books/{{current_user_book.id}}">{{current_user_book.title}}</a></p>
+            <p>added by:{{current_user_book.uploaded_by.first_name}} {{current_user_book.uploaded_by.last_name}})</p>
+          {% endif %}
+        {% endfor %}
+          
+    </div>
+  </body>
+</html>

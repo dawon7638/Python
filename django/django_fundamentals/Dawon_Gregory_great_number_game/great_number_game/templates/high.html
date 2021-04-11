@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+      <link rel="stylesheet" href="{% static 'my_style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="topbox">
+            <p class="one">Welcome to the Great Number Game!</p>
+            <p>I am thinking of a number between 1 and 100</p>
+            <p>Take a guess!</p>
+        </div>
+        <h1 class="toohigh">Too high!</h1>
+
+            
+        <div class="bottombox">
+            <form action="/process_form" method="POST">
+                {%csrf_token%}
+                <input type="number" name="usernum" id="usernum">
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
